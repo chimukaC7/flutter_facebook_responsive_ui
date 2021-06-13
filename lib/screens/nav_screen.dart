@@ -10,14 +10,18 @@ class NavScreen extends StatefulWidget {
 }
 
 class _NavScreenState extends State<NavScreen> {
+
+  //list of screens
   final List<Widget> _screens = [
     HomeScreen(),
-    Scaffold(),
+    Scaffold(),//since we did not build those screens out
     Scaffold(),
     Scaffold(),
     Scaffold(),
     Scaffold(),
   ];
+
+  //list of icons
   final List<IconData> _icons = const [
     Icons.home,
     Icons.ondemand_video,
@@ -26,11 +30,14 @@ class _NavScreenState extends State<NavScreen> {
     MdiIcons.bellOutline,
     Icons.menu,
   ];
+
   int _selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
+
     final Size screenSize = MediaQuery.of(context).size;
+
     return DefaultTabController(
       length: _icons.length,
       child: Scaffold(
@@ -45,7 +52,7 @@ class _NavScreenState extends State<NavScreen> {
                 ),
               )
             : null,
-        body: IndexedStack(
+        body: IndexedStack(//maintains the position of the scroll on different screens
           index: _selectedIndex,
           children: _screens,
         ),

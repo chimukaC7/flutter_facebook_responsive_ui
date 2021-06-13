@@ -16,6 +16,7 @@ class PostContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final bool isDesktop = Responsive.isDesktop(context);
+
     return Card(
       margin: EdgeInsets.symmetric(
         vertical: 5.0,

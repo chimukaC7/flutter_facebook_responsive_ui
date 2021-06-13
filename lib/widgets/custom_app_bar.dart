@@ -5,6 +5,7 @@ import 'package:flutter_facebook_responsive_ui/widgets/widgets.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class CustomAppBar extends StatelessWidget {
+
   final User currentUser;
   final List<IconData> icons;
   final int selectedIndex;

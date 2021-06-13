@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
         scaffoldBackgroundColor: Palette.scaffold,
       ),
-      home: NavScreen(),
+      home: NavScreen(),//this way, whichever screen that we switch to, the bottom nav will always be there
     );
   }
 }

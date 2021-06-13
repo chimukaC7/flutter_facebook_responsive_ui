@@ -13,7 +13,9 @@ class Rooms extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     final bool isDesktop = Responsive.isDesktop(context);
+
     return Card(
       margin: EdgeInsets.symmetric(horizontal: isDesktop ? 5.0 : 0.0),
       elevation: isDesktop ? 1.0 : 0.0,
@@ -29,12 +31,13 @@ class Rooms extends StatelessWidget {
             horizontal: 4.0,
           ),
           scrollDirection: Axis.horizontal,
-          itemCount: 1 + onlineUsers.length,
+          itemCount: 1 + onlineUsers.length,//add 1 to accommodate the button
           itemBuilder: (BuildContext context, int index) {
-            if (index == 0) {
+            if (index == 0) {//create room button
+              //button
               return Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                child: _CreateRoomButton(),
+                child: _CreateRoomButton(),//call function at the button
               );
             }
             final User user = onlineUsers[index - 1];

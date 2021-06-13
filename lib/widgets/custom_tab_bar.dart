@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_facebook_responsive_ui/config/palette.dart';
 
 class CustomTabBar extends StatelessWidget {
+
   final List<IconData> icons;
   final int selectedIndex;
   final Function(int) onTap;
@@ -17,7 +18,7 @@ class CustomTabBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TabBar(
+    return TabBar(//tab bar
       indicatorPadding: EdgeInsets.zero,
       indicator: BoxDecoration(
         border: isBottomIndicator

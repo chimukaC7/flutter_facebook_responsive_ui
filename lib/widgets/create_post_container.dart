@@ -28,7 +28,7 @@ class CreatePostContainer extends StatelessWidget {
               children: [
                 ProfileAvatar(imageUrl: currentUser.imageUrl),
                 const SizedBox(width: 8.0),
-                Expanded(
+                Expanded(//expand to consume the remaining width of the row
                   child: TextField(
                     decoration: InputDecoration.collapsed(
                       hintText: 'What\'s on your mind?',

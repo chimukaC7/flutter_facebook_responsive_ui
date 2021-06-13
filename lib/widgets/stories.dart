@@ -5,9 +5,11 @@ import 'package:flutter_facebook_responsive_ui/models/models.dart';
 import 'package:flutter_facebook_responsive_ui/widgets/widgets.dart';
 
 class Stories extends StatelessWidget {
+
   final User currentUser;
   final List<Story> stories;
 
+  //constructor
   const Stories({
     Key key,
     @required this.currentUser,
@@ -27,15 +29,13 @@ class Stories extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         itemCount: 1 + stories.length,
         itemBuilder: (BuildContext context, int index) {
-          if (index == 0) {
+          if (index == 0) {//our add to story
             return Padding(
               padding: const EdgeInsets.symmetric(horizontal: 4.0),
-              child: _StoryCard(
-                isAddStory: true,
-                currentUser: currentUser,
-              ),
+              child: _StoryCard(isAddStory: true, currentUser: currentUser,),
             );
           }
+
           final Story story = stories[index - 1];
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 4.0),
@@ -63,17 +63,17 @@ class _StoryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        ClipRRect(
+        ClipRRect(//rounded edges and holder for background image
           borderRadius: BorderRadius.circular(12.0),
           child: CachedNetworkImage(
             imageUrl: isAddStory ? currentUser.imageUrl : story.imageUrl,
-            height: double.infinity,
+            height: double.infinity,//so that it expands to the full height of the container
             width: 110.0,
             fit: BoxFit.cover,
           ),
         ),
         Container(
-          height: double.infinity,
+          height: double.infinity,//stretches to the height of the container
           width: 110.0,
           decoration: BoxDecoration(
             gradient: Palette.storyGradient,

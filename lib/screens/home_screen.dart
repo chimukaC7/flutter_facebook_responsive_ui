@@ -48,12 +48,11 @@ class _HomeScreenMobile extends StatelessWidget {
   Widget build(BuildContext context) {
     return CustomScrollView(
       controller: scrollController,
-      slivers: [
+      slivers: [//app hides when scrolling up and reappears when scrolling downwards
         SliverAppBar(
           brightness: Brightness.light,
           backgroundColor: Colors.white,
-          title: Text(
-            'facebook',
+          title: Text('facebook',
             style: const TextStyle(
               color: Palette.facebookBlue,
               fontSize: 28.0,
@@ -61,8 +60,8 @@ class _HomeScreenMobile extends StatelessWidget {
               letterSpacing: -1.2,
             ),
           ),
-          centerTitle: false,
-          floating: true,
+          centerTitle: false,//un-centering the title
+          floating: true,//app bar shows just upon scrolling downwards
           actions: [
             CircleButton(
               icon: Icons.search,
@@ -95,7 +94,7 @@ class _HomeScreenMobile extends StatelessWidget {
           ),
         ),
         SliverList(
-          delegate: SliverChildBuilderDelegate(
+          delegate: SliverChildBuilderDelegate(//similar to listview builder
             (context, index) {
               final Post post = posts[index];
               return PostContainer(post: post);
